@@ -1,0 +1,32 @@
+#com3 {
+    position:absolute;
+    left: 195px;
+    top: 115px;
+    z-index: 2;
+}
+
+#com2 {
+    position:absolute;
+    left: 195px;
+    top: 735px;
+    z-index: 2;
+}
+
+#com1 {
+    position:absolute;
+    left: 195px;
+    top: 1355px;
+    z-index: 2;
+}
+
+#com3 .m {
+    margin-left: -5px;
+}
+
+#com3 .r {
+    margin-left: -5px;
+}
+
+#com2 .r {
+    margin-left: -5px;
+}

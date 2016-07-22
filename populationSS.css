@@ -1,0 +1,32 @@
+#men1 {
+    position:absolute;
+    left: 195px;
+    top: 115px;
+    z-index: 2;
+}
+
+#men2 {
+    position:absolute;
+    left: 195px;
+    top: 735px;
+    z-index: 2;
+}
+
+#men3 {
+    position:absolute;
+    left: 195px;
+    top: 1355px;
+    z-index: 2;
+}
+
+#men2 .r {
+    margin-left: -6px;
+}
+
+#men3 .r {
+    margin-left: -6px;
+}
+
+#men3 .m {
+    margin-left: -6px;
+}

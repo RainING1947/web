@@ -1,0 +1,45 @@
+#myFootPrint {
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    left: 160px;
+    top: 64px;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#apartmentRank {
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    left: 160px;
+    top: 464px;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.aRankInDetail {
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    left: 562px;
+    top: 464px;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+    display: none;
+}
+
+#climaxTime {
+    width: 900px;
+    height: 450px;
+    position: absolute;
+    left: 160px;
+    top: 864px;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+

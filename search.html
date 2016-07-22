@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SelectPage</title>
+    <script type="text/javascript" src="jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="EchartsJs.js"></script>
+    <link href = "TopNavigate.css" rel = "stylesheet">
+    <link href="selectStyle.css" rel="stylesheet">
+</head>
+<body>
+<div id = "topNavigate">
+    <ul id = "topNavigateList">
+        <li id="pad"></li>
+        <li id="guide"><a href="booTry.html">约吗</a></li>
+        <li id="slogan">一起自习吗亲</li>
+        <li id="searchLi">
+            <div id="searchDiv">
+                <form method="get" id="searchForm">
+                    <input id="mouseOutSI" name="search" type="text" value="搜索感兴趣的教室 如:4-235"/>
+                </form>
+                <button id="searchButton" type="submit"><img id="searchPng" src="search.png"></button>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#searchButton").click(function(){
+                            window.location.href="search.html";
+                        });
+                    });
+                </script>
+            </div>
+        </li>
+        <li id="mainPageLi" class="nav"><a href="booTry.html"><div id="mainPageDiv"  onmouseover="this.id='mouseOnMain'" onmouseout="this.id='mainPageDiv'"><br/>主页</div></a></li>
+        <li id="selectLi" class="nav"><a href="selectPage.html"><div id="selectDiv" onmouseover="this.id='mouseOnSelect'" onmouseout="this.id='selectDiv'"><br/>筛选</div></a></li>
+        <li id="recommendLi" class="nav"><div id="recommendDiv" onmouseover="this.id='mouseOnRecommend'"><br/>推荐</div>
+            <div id="menuDiv" style="left:932px"><ul class="recommendUl">
+                <li class="recommendList"><a class = "recList" href="comprehensivePage.html">综合</a></li>
+                <li class="recommendList"><a class = "recList" href="populationPage.html">人数</a></li>
+                <li class="recommendList"><a class = "recList" href="historyPage.html">足迹</a></li>
+            </ul></div>
+        </li>
+        <li id="researchLi" class="nav"><a href="researchPage.html"><div id="researchDiv" onmouseover="this.id='mouseOnResearch'" onmouseout="this.id='researchDiv'"><br/>统计</div></a></li>
+    </ul>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#recommendDiv")
+                .mouseover(function(){
+                    $("#menuDiv").show();
+                })
+                .mouseout(function(){
+                    $("#menuDiv").hide();
+                    $("#mouseOnRecommend").attr("id", "recommendDiv");
+                });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#menuDiv")
+                .mouseover(function(){
+                    $("#menuDiv").show();
+                    $("#recommendDiv").attr("id", "mouseOnRecommend");
+                })
+                .mouseout(function(){
+                    $("#menuDiv").hide();
+                    $("#mouseOnRecommend").attr("id", "recommendDiv");
+                });
+        });
+    </script>
+    <script type="text/javascript">
+        var inSearch = false;
+        $(document).ready(function(){
+            $("#searchDiv")
+                .click(function(){
+                    $("#mouseOutSI").css("background-color", "#ffffff").attr("value", "");
+                })
+                .mouseover(function(){
+                    inSearch = true;
+                })
+                .mouseout(function(){
+                    inSearch = false;
+                });
+            $("body")
+                .click(function(){
+                    if(inSearch == false){
+                        $("#mouseOutSI").css("background-color", "#e2f6ff").attr("value", "搜索感兴趣的教室 如:4-235");
+                    }
+                });
+        });
+    </script>
+</div>
+<div id="content">
+    <div id="optionDiv">
+        <form method="get" id="optionForm">
+            <ul id="optionUl">
+                <li><div style="height: 5px; width: 60px"></div></li>
+                <li class="optionChap" id="location">位置</li>
+                <li class="optionItem, loc"><input type="checkbox" value="j1"/> 教一</li>
+                <li class="optionItem, loc"><input type="checkbox" value="j2"/> 教二</li>
+                <li class="optionItem, loc"><input type="checkbox" value="j3"/> 教三</li>
+                <li class="optionItem, loc"><input type="checkbox" value="j4"/> 教四</li>
+                <li class="optionItem, loc"><input type="checkbox" value="library"/> 图书馆</li>
+                <li class="optionItem, loc"><input type="checkbox" value="jall" checked="checked"/> 不限</li>
+                <li><div style="height: 10px; width: 60px"></div></li>
+                <li class="optionChap" id="floor">楼层</li>
+                <li class="optionItem, flr"><input type="checkbox" value="f1" class="f-item"/> 一层</li>
+                <li class="optionItem, flr"><input type="checkbox" value="f2" class="f-item"/> 二层</li>
+                <li class="optionItem, flr"><input type="checkbox" value="f3" class="f-item"/> 三层</li>
+                <li class="optionItem, flr"><input type="checkbox" value="f4" class="f-item"/> 四层</li>
+                <li class="optionItem, flr"><input type="checkbox" value="fall" checked="checked"/> 不限</li>
+                <li id="confirmButton"><input type="button" value="确认"/></li>
+            </ul>
+        </form>
+    </div>
+    <ul id="charts">
+        <li>
+            <div id="circle" style="width:888px;height:600px;border:solid 3px lightslategray;border-radius:5px;position: absolute;left:167px;top:100px;margin-bottom:25px"></div>
+            <script type="text/javascript" src = "circleSheet.js"></script>
+        </li>
+    </ul>
+</div>
+<div id="bottom" style="width: 100%;height: 48px;background-color: blue;position: absolute;top:1400px;display: none;"></div>
+</body>
+</html>

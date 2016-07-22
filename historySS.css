@@ -1,0 +1,44 @@
+#his3 {
+    position:absolute;
+    left: 205px;
+    top: 90px;
+    height: 84px;
+    width: 64px;
+    z-index: 2;
+    transform: rotate(-70deg);
+    display: inline-block;
+}
+
+#his2 {
+    position:absolute;
+    left: 205px;
+    top: 715px;
+    height: 84px;
+    width: 64px;
+    z-index: 2;
+    transform: rotate(-70deg);
+    display: inline-block;
+}
+
+#his1 {
+    position:absolute;
+    left: 205px;
+    top: 1325px;
+    height: 84px;
+    width: 64px;
+    z-index: 2;
+    transform: rotate(-70deg);
+    display: inline-block;
+}
+
+.l1 {
+    -webkit-transform: rotate(30deg);
+}
+
+.r2 {
+    -webkit-transform: rotate(50deg);
+}
+
+.r1 {
+    -webkit-transform: rotate(40deg);
+}

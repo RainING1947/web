@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按历史推荐</title>
+    <link href = "TopNavigate.css" rel = "stylesheet">
+    <link href="populationSS.css" rel="stylesheet">
+    <link href="darktooltip.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="EchartsJs.js"></script>
+    <script type="text/javascript" src="jquery.darktooltip.js"></script>
+</head>
+<body>
+<div id = "topNavigate">
+    <ul id = "topNavigateList">
+        <li id="pad"></li>
+        <li id="guide"><a href="booTry.html">约吗</a></li>
+        <li id="slogan">一起自习吗亲</li>
+        <li id="searchLi">
+            <div id="searchDiv">
+                <form method="get" id="searchForm">
+                    <input id="mouseOutSI" name="search" type="text" value="搜索感兴趣的教室 如:4-235"/>
+                </form>
+                <button id="searchButton" type="submit"><img id="searchPng" src="search.png"></button>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#searchButton").click(function(){
+                            window.location.href="search.html";
+                        });
+                    });
+                </script>
+            </div>
+        </li>
+        <li id="mainPageLi" class="nav"><a href="booTry.html"><div id="mainPageDiv"  onmouseover="this.id='mouseOnMain'" onmouseout="this.id='mainPageDiv'"><br/>主页</div></a></li>
+        <li id="selectLi" class="nav"><a href="selectPage.html"><div id="selectDiv" onmouseover="this.id='mouseOnSelect'" onmouseout="this.id='selectDiv'"><br/>筛选</div></a></li>
+        <li id="recommendLi" class="nav"><div id="recommendDiv" onmouseover="this.id='mouseOnRecommend'"><br/>推荐</div>
+            <div id="menuDiv" style="left: 932px"><ul class="recommendUl">
+                <li class="recommendList"><a class = "recList" href="comprehensivePage.html">综合</a></li>
+                <li class="recommendList"><a class = "recList" href="populationPage.html">人数</a></li>
+                <li class="recommendList"><a class = "recList" href="historyPage.html">足迹</a></li>
+            </ul></div>
+        </li>
+        <li id="researchLi" class="nav"><a href="researchPage.html"><div id="researchDiv" onmouseover="this.id='mouseOnResearch'" onmouseout="this.id='researchDiv'"><br/>统计</div></a></li>
+    </ul>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#recommendDiv")
+                .mouseover(function(){
+                    $("#menuDiv").show();
+                })
+                .mouseout(function(){
+                    $("#menuDiv").hide();
+                    $("#mouseOnRecommend").attr("id", "recommendDiv");
+                });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#menuDiv")
+                .mouseover(function(){
+                    $("#menuDiv").show();
+                    $("#recommendDiv").attr("id", "mouseOnRecommend");
+                })
+                .mouseout(function(){
+                    $("#menuDiv").hide();
+                    $("#mouseOnRecommend").attr("id", "recommendDiv");
+                });
+        });
+    </script>
+    <script type="text/javascript">
+        var inSearch = false;
+        $(document).ready(function(){
+            $("#searchDiv")
+                .click(function(){
+                    $("#mouseOutSI").css("background-color", "#ffffff").attr("value", "");
+                })
+                .mouseover(function(){
+                    inSearch = true;
+                })
+                .mouseout(function(){
+                    inSearch = false;
+                });
+            $("body")
+                .click(function(){
+                    if(inSearch == false){
+                        $("#mouseOutSI").css("background-color", "#e2f6ff").attr("value", "搜索感兴趣的教室 如:4-235");
+                    }
+                });
+        });
+    </script>
+</div>
+<div id="content">
+    <ul id="charts">
+        <li>
+            <div id="circle" style="width:888px;height:600px;border:solid 3px lightslategray;border-radius:5px;position: absolute;left:167px;top:100px;margin-bottom:25px"></div>
+            <div id="circle2" style="width:888px;height:600px;border:solid 3px lightslategray;border-radius:5px;position: absolute;left:167px;top:720px;margin-bottom:25px"></div>
+            <div id="circle3" style="width:888px;height:600px;border:solid 3px lightslategray;border-radius:5px;position: absolute;left:167px;top:1340px;margin-bottom:25px"></div>
+            <script type="text/javascript" src = "circleSheet.js"></script>
+            <div id="men1" title="人少的自习室 No.3">
+                <img class="m" src="head.png"/>
+            </div>
+            <div id="men2" title="人少的自习室 No.2">
+                <img class="l" src="head.png"/>
+                <img class="r" src="head.png"/>
+            </div>
+            <div id="men3" title="人少的自习室 No.1">
+                <img class="l" src="head.png"/>
+                <img class="r" src="head.png"/>
+                <img class="m" src="head.png"/>
+            </div>
+            <script type="text/javascript">
+                $(document).ready( function(){
+                    $('#men1').darkTooltip({
+                        content:'人少的自习室 No.1',
+                        animation:'flipIn',
+                        gravity:'east',
+                        theme:'blue',
+                        size: 'medium'
+                    });
+                    $('#men2').darkTooltip({
+                        content:'人少的自习室 No.2',
+                        animation:'flipIn',
+                        gravity:'east',
+                        theme:'blue',
+                        size: 'medium'
+                    });
+                    $('#men3').darkTooltip({
+                        content:'人少的自习室 No.3',
+                        animation:'flipIn',
+                        gravity:'east',
+                        theme:'blue',
+                        size: 'medium'
+                    });
+                });
+            </script>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
